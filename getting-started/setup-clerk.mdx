@@ -1,0 +1,197 @@
+---
+title: "Setup Clerk"
+description: "Let's set up a new Clerk account and integrate it into a new application."
+icon: "text-size"
+---
+
+import { FrameworkCards } from "@/components/FrameworkCards";
+import { Steps } from "nextra-theme-docs";
+
+# Setup Clerk
+
+<Accordion title="Migrating from another platform?">
+  You might want to [check out one of our migration
+  guides](/migrations-deployments/migrate-from/overview) to help you move your
+  data to Clerk.
+</Accordion>
+
+Creating a Clerk account and using it in your apps is a simple three-step process:
+
+{/* <Steps> */}
+
+## Step 1: Create a Clerk account
+
+[Go to Clerk's sign-up page](https://dashboard.clerk.com/sign-up) and create an account.
+
+{" "}
+
+<br />
+
+{/* Don't move ![] to a new line, otherwise MDX adds a <p> tag and it breaks A11Y */}
+
+{" "}
+
+<div
+  style={{
+    filter: "drop-shadow(rgba(0, 0, 0, 0.16) 0px 12px 24px)",
+    maxWidth: "400px",
+  }}
+>
+  ![An interactive "Create your account" card which provides sign-up options for
+  a GitHub or Google account as well as email and
+  password.](./create-clerk-account.png)
+</div>
+
+{" "}
+
+<br />
+
+## Step 2: Create a Clerk application
+
+Once you've created an account, you'll be redirected to [your Clerk dashboard](https://dashboard.clerk.com/).
+
+On a freshly created account, you won't have any applications. To create one, press the "Add application" card:
+
+{" "}
+
+<br />
+
+{/* Don't move ![] to a new line, otherwise MDX adds a <p> tag and it breaks A11Y */}
+
+{" "}
+
+<div
+  style={{
+    filter: "drop-shadow(rgba(0, 0, 0, 0.16) 0px 12px 24px)",
+    maxWidth: "400px",
+  }}
+>
+  ![An "Add application" card on your dashboard](./add-application.png)
+</div>
+
+{" "}
+
+<br />
+
+When the "Add application" card is pressed, you'll be directed to create your `<SignIn>` component and select your preferred
+auth providers.
+
+{" "}
+
+<br />
+
+{/* Don't move ![] to a new line, otherwise MDX adds a <p> tag and it breaks A11Y */}
+
+{" "}
+
+<div style={{ filter: "drop-shadow(rgba(0, 0, 0, 0.16) 0px 12px 24px)" }}>
+  ![An interactive builder to make your "SignIn" component truly yours, which
+  lets you select your auth providers.](./create-sign-in-comp.png)
+</div>
+
+{" "}
+
+<br />
+
+> [We provide over 20 authentication providers that you can utilize in your Clerk apps.](/users/authentication-providers/overview)
+
+Once done, you should see a list of API keys that make setting up a new codebase easier.
+
+{" "}
+
+<br />
+
+{/* Don't move ![] to a new line, otherwise MDX adds a <p> tag and it breaks A11Y */}
+
+{" "}
+
+<div style={{ filter: "drop-shadow(rgba(0, 0, 0, 0.16) 0px 12px 24px)" }}>
+  ![A list of supported frameworks with instructions on how to add API keys
+  underneath.](./env-keys.png)
+</div>
+
+{" "}
+
+<br />
+
+## Step 3: Spin up a new codebase
+
+The API keys listed in the dashboard are just the first step to integrating Clerk into your apps. To get the most out
+of Clerk, check out our "Quickstart" guides:
+
+<CardGroup cols={2}>
+  <Card
+    title="Next.js"
+    href="/quickstarts/full-stack/stable"
+    icon={
+      <svg
+        width="41"
+        height="25"
+        viewBox="0 0 82 50"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        {/* <style>
+          {`
+            :path {
+              fill: black;
+            }
+            @media (prefers-color-scheme: dark) {
+              path {
+                fill: white;
+              }
+            }
+          `}
+        </style> */}
+        <path
+          d="M20.3125 12.8641H35.19V14.0647H21.6763V23.101H34.3841V24.3016H21.6763V34.2226H35.3449V35.4232H20.3125V12.8641ZM36.5227 12.8641H38.1035L45.1083 22.785L52.2681 12.8641L62.0065 0.262207L46.0071 23.8277L54.2517 35.4232H52.609L45.1083 24.8703L37.5766 35.4232H35.9648L44.2714 23.8277L36.5227 12.8641ZM54.8406 14.0647V12.8641H71.7948V14.0647H63.9841V35.4232H62.6203V14.0647H54.8406Z"
+          fill="black"
+        />
+        <path
+          d="M1.70312 12.8643H3.40783L26.9148 48.5799L17.2005 35.4234L3.12888 14.5704L3.06689 35.4234H1.70312V12.8643Z"
+          fill="black"
+        />
+        <path
+          d="M71.6595 33.8604C71.9414 33.8604 72.1471 33.6412 72.1471 33.358C72.1471 33.0747 71.9414 32.8555 71.6595 32.8555C71.3808 32.8555 71.1719 33.0747 71.1719 33.358C71.1719 33.6412 71.3808 33.8604 71.6595 33.8604ZM72.9995 32.5385C72.9995 33.3748 73.5933 33.9211 74.459 33.9211C75.3811 33.9211 75.9384 33.3579 75.9384 32.38V28.9369H75.1954V32.3766C75.1954 32.9196 74.9267 33.2096 74.4524 33.2096C74.0278 33.2096 73.7392 32.9398 73.7293 32.5385H72.9995ZM76.9103 32.4946C76.9634 33.3647 77.6765 33.9211 78.738 33.9211C79.8724 33.9211 80.5822 33.3377 80.5822 32.407C80.5822 31.6752 80.1775 31.2705 79.1957 31.0378L78.6683 30.9063C78.0447 30.7579 77.7926 30.5589 77.7926 30.2116C77.7926 29.7732 78.184 29.4866 78.7711 29.4866C79.3284 29.4866 79.7131 29.7665 79.7828 30.215H80.5059C80.4628 29.3955 79.753 28.8188 78.7811 28.8188C77.7362 28.8188 77.0396 29.3955 77.0396 30.2622C77.0396 30.9771 77.4344 31.402 78.3001 31.6077L78.9171 31.7595C79.5506 31.9112 79.8292 32.1338 79.8292 32.5048C79.8292 32.9364 79.3914 33.25 78.7943 33.25C78.1542 33.25 77.7097 32.9566 77.6467 32.4946H76.9103Z"
+          fill="black"
+        />
+      </svg>
+    }
+  >
+    Easily add secure, beautiful, and fast authentication to Next.js with Clerk.
+    <br />
+    **Get Started**
+
+  </Card>
+  <Card title="Second Card" icon="square-2" color="#0285c7">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit
+  </Card>
+  <Card title="Third Card" icon="square-3" color="#16a34a">
+    Ut enim ad minim veniam, quis nostrud exercitation ullamco
+  </Card>
+  <Card title="Fourth Card" icon="square-4" color="#dc2626">
+    Excepteur sint occaecat cupidatat non proident
+  </Card>
+</CardGroup>
+
+  <div className="container mx-auto my-4">
+    <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+      <FrameworkCards title="Next.js" description="" link="/quickstarts/full-stack/stable" cta="Get Started" icon="/images/logos/nextjs.svg" iconWidth="40" />
+
+      <FrameworkCards title="React" description="Get started installing and initializing Clerk in a new Create React App." link="/quickstarts/frontend/react" cta="Get Started" icon="/images/logos/react.svg" />
+
+      <FrameworkCards title="Remix" description="Easily add secure, edge- and SSR-friendly authentication to Remix with Clerk." link="/quickstarts/full-stack/remix" cta="Get Started" icon="/images/logos/remix.svg" />
+
+      <FrameworkCards title="RedwoodJS" description="Grow your RedwoodJS application with Clerk user management and authentication." link="/quickstarts/full-stack/remix" cta="Get Started" icon="/images/logos/redwood.svg" />
+
+      <FrameworkCards title="Expo / React Native" description="Use Clerk with Expo to authenticate users in your React Native application." link="/quickstarts/native/expo" cta="Get Started" icon="/images/logos/expo.svg" />
+
+      <FrameworkCards title="Express.js" description="Add authentication and user management to your Express.js application." link="#" cta="Coming Soon" hideArrow={true} icon="/images/logos/express.svg" iconWidth="30" />
+
+      <FrameworkCards title="Fastify" description="Learn about installing and initializing Clerk in a new Fastify application." link="#" cta="Coming Soon" hideArrow={true} icon="/images/logos/fastify.svg" iconWidth="40" />
+
+      <FrameworkCards title="Ruby / Rails" description="Integrate user management and authentication into your Ruby application." link="#" cta="Coming Soon" hideArrow={true} icon="/images/logos/ruby.svg" />
+    </div>
+
+  </div>
+{/* </Steps> */}
